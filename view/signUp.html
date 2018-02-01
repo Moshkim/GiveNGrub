@@ -16,6 +16,24 @@
             <form class="col s10">
                 <div class="row">
                     <div class="input-field col s10">
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>                                        
+                <div class="row">
+                    <div class="input-field col s10">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>                  
+                <div class="row">
+                    <div class="input-field col s10">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="input-field col s10">
                         <input id="companyName" type="text" class="validate">
                         <label for="companyName">Company Name</label>
                     </div>
@@ -26,36 +44,6 @@
                         <label for="mainContact">Main Contact</label>
                     </div>
                 </div>
-                <div class="row">
-                    <label>Entity</label>
-                    <p>
-                        <input name="entity" class="with-gap" type="radio" id="fp" />
-                        <label for="fp">Food Provider (Grocers, Restaurants, etc.)</label>
-                    </p>
-                    <p>
-                        <input name="entity" class="with-gap" type="radio" id="np" />
-                        <label for="np">Non-Profit Organization (Soup Kitchens, Charities, etc.)</label>
-                    </p>
-                </div>
-                <div class="row">
-                    <label>Feeding Capacity</label>
-                    <p>
-                        <input name="capacity" class="with-gap" type="radio" id="small" />
-                        <label for="small">1-25 People</label>
-                    </p>
-                    <p>
-                        <input name="capacity" class="with-gap" type="radio" id="medium" />
-                        <label for="medium">26-50 People</label>
-                    </p>
-                    <p>
-                        <input name="capacity" class="with-gap" type="radio" id="large" />
-                        <label for="large">51-100 People</label>
-                    </p>
-                    <p>
-                        <input name="capacity" class="with-gap" type="radio" id="xlarge" />
-                        <label for="xlarge">101+ People</label>
-                    </p>
-                </div>                
                 <div class="row">
                     <div class="input-field col s10">
                         <input id="address1" type="text" class="validate">
@@ -87,23 +75,35 @@
                     </div>
                 </div>   
                 <div class="row">
-                    <div class="input-field col s10">
-                        <input id="username" type="text" class="validate">
-                        <label for="username">Username</label>
-                    </div>
-                </div>                                        
+                    <label>Entity</label>
+                    <p>
+                        <input name="entity" class="with-gap" type="radio" id="fp" />
+                        <label for="fp">Food Provider (Grocers, Restaurants, etc.)</label>
+                    </p>
+                    <p>
+                        <input name="entity" class="with-gap" type="radio" id="np" />
+                        <label for="np">Non-Profit Organization (Soup Kitchens, Charities, etc.)</label>
+                    </p>
+                </div>
                 <div class="row">
-                    <div class="input-field col s10">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>                  
-                <div class="row">
-                    <div class="input-field col s10">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>         
+                    <label>Feeding Capacity</label>
+                    <p>
+                        <input name="capacity" class="with-gap" type="radio" id="small" />
+                        <label for="small"> Less than 25 People</label>
+                    </p>
+                    <p>
+                        <input name="capacity" class="with-gap" type="radio" id="medium" />
+                        <label for="medium">Less than 50 People</label>
+                    </p>
+                    <p>
+                        <input name="capacity" class="with-gap" type="radio" id="large" />
+                        <label for="large">Less than 100 People</label>
+                    </p>
+                    <p>
+                        <input name="capacity" class="with-gap" type="radio" id="xlarge" />
+                        <label for="xlarge">101+ People</label>
+                    </p>
+                </div>                                         
             </form>
         </div>
 </body>
