@@ -15,7 +15,7 @@ app.use(express.static('public'))
 //If there is more routes then you can add more~
 
 require('./controllers/html-routes.js')(app)
-// require('./controls/routes/routes.js')(app)
+//require('./controllers/routes.js')(app)
 // require('./controls/routes/routes.js')(app)
 
 //database.sequelize.sync({force: false}).then(function(){
