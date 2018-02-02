@@ -1,12 +1,9 @@
 module.exports = function(sequelize, DataType) {
-    const FoodLists = sequelize.define("food_lists", {
+    const Food = sequelize.define("Food", {
         id: {
             type: DataType.INTEGER,
             autoIncrement: true,
             primaryKey: true
-        },
-        orgID: {
-            type: DataType.INTEGER
         },
         frozen: {
             type: DataType.INTEGER,
@@ -28,6 +25,10 @@ module.exports = function(sequelize, DataType) {
             allowNull: true,
             defaultValue: 0
         },
+        description: {
+            type: DataType.TEXT,
+            allowNull: true
+        },
         status: {
             type: DataType.BOOLEAN,
             defaultValue: true,
@@ -35,7 +36,7 @@ module.exports = function(sequelize, DataType) {
         },
         remaining: {
             type: DataType.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         takenBy: {
             type: DataType.INTEGER,
@@ -43,5 +44,16 @@ module.exports = function(sequelize, DataType) {
             allowNull: true
         }
     })
-    return FoodLists
+
+    
+    Food.associate = function(models){
+        Food.belongsTo(models.Organization, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    }
+    
+
+    return Food
 }

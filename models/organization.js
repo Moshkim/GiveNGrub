@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataType){
-    const Users = sequelize.define('users', {
+    const Organization = sequelize.define('Organization', {
         id:{
             type: DataType.INTEGER,
             unique: true,
@@ -37,16 +37,9 @@ module.exports = function(sequelize, DataType){
                 len:[5, 50]
             }
         },
-        address_one: {
+        address: {
             type: DataType.STRING,
             allowNull: false,
-            validate: {
-                len: [5, 50]
-            }
-        },
-        address_two: {
-            type: DataType.STRING,
-            allowNull: true,
             validate: {
                 len: [5, 50]
             }
@@ -85,6 +78,12 @@ module.exports = function(sequelize, DataType){
             }
         }
     })
+    
+    Organization.associate = function(models){
+        Organization.hasMany(models.Food, {
+            onDelete: "cascade"
+        })
+    }
 
-    return Users
+    return Organization
 }
