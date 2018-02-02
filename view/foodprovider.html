@@ -1,0 +1,152 @@
+<!DOCTYPE>
+
+<html>
+<title>Food Provider</title>
+
+<head>
+    
+    <title>The Materialize Example</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family = Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+    
+    <style>
+        #sectionOne {
+            margin: 0 auto 0 auto;
+            max-width: 70%;
+        }
+        p {
+            float: left;
+            margin: 0 3%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+    <!-- Recent submissions-->
+    <div class="section" id="sectionOne">
+        <div class="card-panel">
+            <h4>Recent Submissions</h4>
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Donation from</th>
+                        <th>Frozen</th>
+                        <th>Fresh</th>
+                        <th>Packaged</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ralphs</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>4</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Safeway</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Vons</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr>
+                    <!--span class??? -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+    <!-- Food list -->
+    
+    <div class="section" id="sectionOne">
+        <div class="card-panel">
+            <h4>Add New</h4>
+            <ul class="list-group">
+                <li class="list-group-item new-item">
+                    <div id="list-form">
+                        
+                        
+                        <div class="row">
+                            <p>
+                                <input name="foodtype" class="with-gap" type="radio" id="foodtype1" />
+                                <label for="foodtype1">Fresh</label>
+                            </p>
+                            <p>
+                                <input name="foodtype" class="with-gap" type="radio" id="foodtype2" />
+                                <label for="foodtype2">Packaged</label>
+                            </p>
+                            <p>
+                                <input name="foodtype" class="with-gap" type="radio" id="foodtype3" />
+                                <label for="foodtype3">Frozen</label>
+                            </p>
+                        </div>
+                        <div class="col s4">
+                            <input id="number" placeholder="" type="number">
+                            <button type="submitItem" onclick="submitFood();" class="btn btn-default">Quantity</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <span class="newitem-container">
+                    <div class="card-panel" id="newitemCon">
+                    </div>
+            </span>
+        </ul>
+    </div>
+</div>
+
+<!-- Submit new-->
+<!-- after clicking add, this should take it to the adding html page-->
+<script type="text/javascript">
+
+function insertNewItem(event) {
+    event.preventDefault();
+    var todo = {
+      text: $submitItem.val().trim(),
+      complete: false
+    };
+ 
+    $.post("/api/todos", todo, getTodos);
+    $newItemInput.val("");
+  }
+
+
+
+//patrick code
+// var submitFood;
+// $(document).ready(function(){
+
+//     submitFood = function () {
+//         var footThingy = {
+//             fresh: document.getElementById('foodtype1').checked,
+//             packaged: $('#foodtype2').val()
+//         }
+//         console.log(footThingy);
+//         // $.post('/myPostUrl', foodThingy, function (resp) {
+//         //     console.log(resp);
+//         // })
+//     }    
+    
+
+// })
+
+</script>
+
+
+</body>
+
+</html>
