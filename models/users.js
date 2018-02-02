@@ -73,7 +73,7 @@ module.exports = function(sequelize, DataType){
             }
         },
         entity: {
-            type: DataTypes.STRING,
+            type: DataType.STRING,
             allowNull: false
         },
         capacity: {
