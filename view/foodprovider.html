@@ -1,0 +1,192 @@
+<!DOCTYPE>
+
+<html>
+<title>Food Provider</title>
+
+<head>
+    
+    <title>The Materialize Example</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family = Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+    
+    <style>
+        #sectionOne {
+            margin: 0 auto 0 auto;
+            max-width: 70%;
+        }
+        p {
+            float: left;
+            margin: 0 3%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+    <!-- Recent submissions-->
+    <div class="section" id="sectionOne">
+        <div class="card-panel">
+            <h4>Recent Submissions</h4>
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Fresh</th>
+                        <th>Frozen</th>
+                        <th>Packaged</th>
+                        <th>Canned</th>
+                        <th>Description</th>
+                        <th>Submitted Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>2/3/2018</td>
+                        <td>Available</td>
+                    </tr>
+                    
+                    <!-- <tr>
+                        <td>Safeway</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Vons</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr> -->
+                    <!--span class??? -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+    <!-- Food list -->
+    
+    <div class="section" id="sectionOne">
+        <div class="card-panel">
+            <h4>Add New</h4>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row col s6">
+                            <h5>Fresh</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        <!-- </div> -->
+                        <!-- <div class="row"> -->
+                            <h5>Frozen</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        </div>
+                        <div class="row col s6">
+                            <h5>Packaged</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        <!-- </div>
+                            
+                        <div class="row"> -->
+                            <h5>Canned</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        </div>
+                        <br>
+                        <div class="row col s12">
+                            <h5>Description</h5>
+                            <form class="col s12">
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="description" class="materialize-textarea" placeholder="e.g. bananas, tomatoes, beef, etc."></textarea>
+                                    <!-- <label for="description"></label> -->
+                                </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col s12" align="center">
+                            <!-- <input id="number" placeholder="Quantity" type="number"> -->
+                            <button type="submitItem" onclick="submitFood();" class="btn btn-default">Submit</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            <!-- </li>
+            <span class="newitem-container">
+                    <div class="card-panel" id="newitemCon">
+                    </div>
+            </span> -->
+        <!-- </ul> -->
+    </div>
+</div>
+
+<!-- Submit new-->
+<!-- after clicking add, this should take it to the adding html page-->
+<script type="text/javascript">
+var submitFood;
+
+$(document).ready(function(){
+    submitFood = function () {
+        var quantity = $('input[id=number]').val();
+        var selFoodType = $('input[name=foodtype]:checked').val();
+        var deleteBtn = "<button class='delete btn btn-default' id='delBtn'>Delete</button>";
+        console.log(selFoodType);
+        $('#newitemCon').append(quantity + " " + selFoodType + deleteBtn + "<br>");
+        // $('#number').empty();
+        $(document).on("click", deleteBtn, deleteFood);
+
+    };
+    
+    $(document).on("click", "button.delete", deleteFood);
+
+    deleteFood = function() {
+        $("#newitemCon").remove();
+        var id = $(this).data("id");
+        $.ajax({
+        method: "DELETE",
+        url: "/api/todos/" + id
+        }).then(getTodos);
+    };
+
+  // This function constructs a todo-item row
+//   function createNewRow(addFood) {
+//     var $newInputRow = $(
+//       [
+//         "<li class='newitem-container'>",
+//         "<span>",
+//         addFood.text,
+//         "</span>",
+//         "<input type='text' class='edit' style='display: none;'>",
+//         "<button class='delete btn btn-default'>X</button>",
+//         "<button class='edit btn btn-default'>Edit</button>",
+//         "</li>"
+//       ].join("")
+//     );
+
+
+    // $(document).on("click", "button.delete", deleteFood);
+    
+});
+
+</script>
+
+
+</body>
+
+</html>
