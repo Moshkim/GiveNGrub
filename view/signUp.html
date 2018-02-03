@@ -6,15 +6,13 @@
 <head>
     
     <title>The Materialize Example</title>
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-    <link rel = "stylesheet"
-    href = "https://fonts.googleapis.com/icon?family = Material+Icons">
-    <link rel = "stylesheet"
-    href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js">
-    </script>           
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-    </script>    
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family = Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
     
     <style>
         #signin {
@@ -26,66 +24,111 @@
 </head>
 
 
-<body class = "section" id="signin">   
+<body class="section" id="signin">
     <div class="card-panel">
-        <div class = "row">
-            <form class = "col s12">
-                <div class = "row">
-                    <div class = "input-field col s12">
-                        <input placeholder = "Username" value = "" id = "name"
-                        type = "text" class = "active validate" required />
-                        <label for = "name">Username</label>
-                    </div>
-                </div>
+        <div class="row">
+            <form class="col s12">
                 <div class="row">
-                    <div class = "input-field col s12">      
-                        <label for = "password">Password</label>
-                        <input id = "password" type = "password" placeholder = "Password"
-                        class = "validate" required />          
+                    <div class="input-field col s12">
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
                     </div>
                 </div>
                 
-                <div class = "row">
-                    <div class = "input-field col s12">
-                        <input placeholder = "Email" id = "email" type = "email"
-                        class = "validate">
-                        <label for = "email">Email</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="text" class="validate">
+                        <label for="password">Password</label>
                     </div>
                 </div>
                 
-                <div class = "row">
-                        <div class = "input-field col s12">
-                            <input placeholder = "Address" value = "" id = "address"
-                            type = "text" class = "active validate" required />
-                            <label for = "address">Address</label>
-                        </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="text" class="validate">
+                        <label for="email">Email</label>
+                    </div>
                 </div>
                 
-                <div class = "row">
-                        <div class = "input-field col s4">
-                                <input placeholder = "City" value = "" id = "city"
-                                type = "text" class = "active validate" required />
-                                <label for = "city"></label>
-                        </div>
-
-                        <div class = "input-field col s4">
-                                <input placeholder = "State" value = "" id = "state"
-                                type = "text" class = "active validate" required />
-                                <label for = "state"></label>
-                        </div>
-
-                        <div class = "input-field col s4">
-                                <input placeholder = "Zip" value = "" id = "zip"
-                                type = "text" class = "active validate" required />
-                                <label for = "zip"></label>
-                        </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="organization" type="text" class="validate">
+                        <label for="organization">Organization</label>
+                    </div>
                 </div>
-                <!-- Submit -->
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="maincontact" type="text" class="validate">
+                        <label for="maincontact">Main Contact</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="address" type="text" class="validate">
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="city" type="text" class="validate">
+                        <label for="city">City</label>
+                    </div>
+                    
+                    <div class="input-field col s4">
+                        <input id="state" type="text" class="validate">
+                        <label for="state">State</label>
+                    </div>
+                    
+                    <div class="input-field col s4">
+                        <input id="zip_code" type="number" class="validate">
+                        <label for="zip_code">Zip Code</label>
+                    </div>
+                </div>
             </div>
-        </div>           
-    </form>       
-    </div>
+            
+            <div class="row">
+                <label>Entity</label>
+                <p>
+                    <input name="entity" class="with-gap" type="radio" id="fp" />
+                    <label for="fp">Food Provider (Grocers, Restaurants, etc.)</label>
+                </p>
+                <p>
+                    <input name="entity" class="with-gap" type="radio" id="np" />
+                    <label for="np">Non-Profit Organization (Soup Kitchens, Charities, etc.)</label>
+                </p>
+            </div>
+            
+            <div class="row">
+                <label>Capacity</label>
+                <p>
+                    <input name="capacity" class="with-gap" type="radio" id="small" />
+                    <label for="small">1-25 People</label>
+                </p>
+                <p>
+                    <input name="capacity" class="with-gap" type="radio" id="medium" />
+                    <label for="medium">26-50 People</label>
+                </p>
+                <p>
+                    <input name="capacity" class="with-gap" type="radio" id="large" />
+                    <label for="large">51-100 People</label>
+                </p>
+                <p>
+                    <input name="capacity" class="with-gap" type="radio" id="xlarge" />
+                    <label for="xlarge">101+ People</label>
+                </p>
+            </div>
+            <div align="center">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right"></i>
+            </button>
+            </div>
+        </form>
 </div>
-</body>   
+</div>
+</body>
 
 </html>

@@ -6,27 +6,27 @@ var path = require("path");
 module.exports = function(app) {
 
     app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../../views/signin.html"));
+        res.sendFile(path.join(__dirname, "../../view/signin.html"));
     });
 
     app.get("/signup", function(req, res) {
-        res.sendFile(path.join(__dirname, "../../views/signup.html"));
+        res.sendFile(path.join(__dirname, "../../view/signup.html"));
     });
 
     app.get("/signin", function(req, res) {
-        res.sendFile(path.join(__dirname, "../../views/signin.html"));
+        res.sendFile(path.join(__dirname, "../../view/signin.html"));
     });
 
     app.get("/fp/foodprovider", function(req, res) {
-        res.sendFile(path.join(__dirname, "../../views/foodprovider.html"));
+        res.sendFile(path.join(__dirname, "../../view/foodprovider.html"));
     });
 
     app.get("/np/nonprofit", function(req, res) {
-        res.sendFile(path.join(__dirname, "../../views/nonprofit.html"));
+        res.sendFile(path.join(__dirname, "../../view/nonprofit.html"));
     });
 
     app.get("/np/profile", function(req, res) {
-        res.sendFile(path.join(__dirname, "../../views/profile.html"));
+        res.sendFile(path.join(__dirname, "../../view/profile.html"));
     });
 
 };
