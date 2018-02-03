@@ -36,22 +36,56 @@
             <table class="responsive-table">
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>Id</th>
+=======
+>>>>>>> 6101b3aacd6fb36f48fb3827910df7c418dfb5b4
                         <th>Fresh</th>
                         <th>Frozen</th>
                         <th>Packaged</th>
                         <th>Canned</th>
+<<<<<<< HEAD
                         <th>Food Description</th>
                         <th>Created On</th>
+=======
+                        <th>Description</th>
+                        <th>Submitted Date</th>
+>>>>>>> 6101b3aacd6fb36f48fb3827910df7c418dfb5b4
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                  
                     <div class="row">
                         <div class="col-md-12 food-container">
                         </div>
                     </div>
+=======
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>2/3/2018</td>
+                        <td>Available</td>
+                    </tr>
+                    
+                    <!-- <tr>
+                        <td>Safeway</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Vons</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>7</td>
+                    </tr> -->
+>>>>>>> 6101b3aacd6fb36f48fb3827910df7c418dfb5b4
                     <!--span class??? -->
                 </tbody>
             </table>
@@ -64,6 +98,7 @@
     <div class="section" id="sectionOne">
         <div class="card-panel">
             <h4>Add New</h4>
+<<<<<<< HEAD
             <ul class="list-group">
                 <li class="list-group-item new-item">
                     <div id="list-form">
@@ -95,12 +130,67 @@
                     </div>
             </span>
         </ul>
+=======
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row col s6">
+                            <h5>Fresh</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        <!-- </div> -->
+                        <!-- <div class="row"> -->
+                            <h5>Frozen</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        </div>
+                        <div class="row col s6">
+                            <h5>Packaged</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        <!-- </div>
+                            
+                        <div class="row"> -->
+                            <h5>Canned</h5>
+                                <div class="input-field">
+                                    <input id="number" placeholder="Quantity (Enter 0 if none)" type="number">
+                                </div>
+                        </div>
+                        <br>
+                        <div class="row col s12">
+                            <h5>Description</h5>
+                            <form class="col s12">
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="description" class="materialize-textarea" placeholder="e.g. bananas, tomatoes, beef, etc."></textarea>
+                                    <!-- <label for="description"></label> -->
+                                </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col s12" align="center">
+                            <!-- <input id="number" placeholder="Quantity" type="number"> -->
+                            <button type="submitItem" onclick="submitFood();" class="btn btn-default">Submit</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            <!-- </li>
+            <span class="newitem-container">
+                    <div class="card-panel" id="newitemCon">
+                    </div>
+            </span> -->
+        <!-- </ul> -->
+>>>>>>> 6101b3aacd6fb36f48fb3827910df7c418dfb5b4
     </div>
 </div>
 
 <!-- Submit new-->
 <!-- after clicking add, this should take it to the adding html page-->
 <script type="text/javascript">
+<<<<<<< HEAD
 
 function insertNewItem(event) {
     event.preventDefault();
@@ -132,6 +222,52 @@ function insertNewItem(event) {
     
 
 // })
+=======
+var submitFood;
+
+$(document).ready(function(){
+    submitFood = function () {
+        var quantity = $('input[id=number]').val();
+        var selFoodType = $('input[name=foodtype]:checked').val();
+        var deleteBtn = "<button class='delete btn btn-default' id='delBtn'>Delete</button>";
+        console.log(selFoodType);
+        $('#newitemCon').append(quantity + " " + selFoodType + deleteBtn + "<br>");
+        // $('#number').empty();
+        $(document).on("click", deleteBtn, deleteFood);
+
+    };
+    
+    $(document).on("click", "button.delete", deleteFood);
+
+    deleteFood = function() {
+        $("#newitemCon").remove();
+        var id = $(this).data("id");
+        $.ajax({
+        method: "DELETE",
+        url: "/api/todos/" + id
+        }).then(getTodos);
+    };
+
+  // This function constructs a todo-item row
+//   function createNewRow(addFood) {
+//     var $newInputRow = $(
+//       [
+//         "<li class='newitem-container'>",
+//         "<span>",
+//         addFood.text,
+//         "</span>",
+//         "<input type='text' class='edit' style='display: none;'>",
+//         "<button class='delete btn btn-default'>X</button>",
+//         "<button class='edit btn btn-default'>Edit</button>",
+//         "</li>"
+//       ].join("")
+//     );
+
+
+    // $(document).on("click", "button.delete", deleteFood);
+    
+});
+>>>>>>> 6101b3aacd6fb36f48fb3827910df7c418dfb5b4
 
 </script>
 
