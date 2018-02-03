@@ -14,11 +14,11 @@ app.use(express.static('public'))
 
 //If there is more routes then you can add more~
 
-//require('./controls/routes/routes.js')(app)
+require('./controllers/routes/food-api-routes')(app)
 //require('./controls/routes/routes.js')(app)
 //require('./controls/routes/routes.js')(app)
 
-database.sequelize.sync({force: true}).then(function(){
+database.sequelize.sync({force: false}).then(function(){
     app.listen(PORT, function() {
         console.log(`App is listening on PORT: ${PORT}`)
     })
