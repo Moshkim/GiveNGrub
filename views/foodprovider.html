@@ -152,7 +152,7 @@ $(document).ready(function() {
   //$(document).on("click", ".delete-author", handleDeleteButtonPress);
 
   // Getting the intiial list of Authors
-  getAuthors();
+  getFood();
 
   // A function to handle what happens when the form is submitted to create a new Author
   function submitFood(event) {
@@ -175,7 +175,7 @@ $(document).ready(function() {
       .then(getAuthors);
   }
   // Function for retrieving authors and getting them ready to be rendered to the page
-  function getAuthors() {
+  function getFood() {
     $.get("/api/fp/food", function(data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {

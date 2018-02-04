@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<title>SignIn</title>
+
+<head>
+    
+    <title>SignIn</title>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/icon?family = Material+Icons">
+    <link rel = "stylesheet"
+    href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      
+    
+    <style>
+        #signin {
+            margin: 15% auto auto auto;
+            max-width: 40%;
+        }
+    </style>
+    
+</head>
+
+
+
+<body class = "section" id="signin">   
+    <div class="card-panel">
+        <div class = "row">
+            <form class = "col s12">
+                <div class = "row">
+                    <div class = "input-field col s12">
+                        <input placeholder = "Email" value = "" id = "email"
+                        type = "text" class = "active validate" required />
+                        <label for = "email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "input-field col s12">      
+                        <label for = "password">Password</label>
+                        <input id = "password" type = "password" placeholder = "Password"
+                        class = "validate" required />          
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+     
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+    <script type="text/javascript" src="js/signin.js"></script>  
+</body>
+
+
+</html>
+            
