@@ -6,16 +6,15 @@ module.exports = function(app){
 
     app.get('/api/id', function(req,res){
 
-
-        console.log("we comes in here!!!12345")
         database.Organization.findOne({
             where: {
-                email: req.body.email,
-                password: req.body.password
+                email: req.query.email,
+                password: req.query.password
             }
         }).then(function(result){
-            console.log(result)
+
             res.json(result)
+            console.log("\n\nwe comes in here!!!\n\n")
         })
     
     })

@@ -77,6 +77,9 @@ module.exports = function(sequelize, DataType){
                 max: 300
             }
         }
+    }, {
+        charset: 'utf8',
+        collate: 'utf8_unicode_ci'
     })
     
     Organization.associate = function(models){

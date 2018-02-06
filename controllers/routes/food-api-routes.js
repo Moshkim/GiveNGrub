@@ -5,12 +5,12 @@ module.exports = function(app){
 
     
 
-    app.get('/api/fp/food', function(req, res){
+    app.get('/api/fp/food/:id', function(req, res){
 
 
         //We need to find out how we are passing data from html to here!
         //It is either through the url or actual data object!!!!!!!!
-        let id = req.body.id
+        let id = req.params.id
 
         console.log("This comes in here?? or no?")
         database.Food.findAll({
@@ -19,9 +19,9 @@ module.exports = function(app){
             }
         }).then(function(foodList){
 
-            console.log(foodList)
+            //console.log(foodList)
 
-            res.json(foodList.dataValues)
+            res.json(foodList)
         })
     })
 
