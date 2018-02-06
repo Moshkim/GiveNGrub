@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!DOCTYPE>
 
 <html>
 <title>Food Provider</title>
@@ -15,6 +16,10 @@
     </script>
     
     <style>
+        body {
+            background-color: rgb(238, 235, 235);
+            /*font-family: 'Indie Flower';*/
+        }
         #sectionOne {
             margin: 0 auto 0 auto;
             max-width: 70%;
@@ -23,48 +28,102 @@
             float: left;
             margin: 0 3%;
         }
+        #scrollData{
+            width: 700x;
+            height: 100px;
+            overflow: scroll;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(133, 136, 132);
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+        .card-panel {
+            border-radius: 25px;
+        }
+        nav {
+            position: fixed;
+        }
+        #addNew {
+            margin: 70px auto auto auto;
+        }
+        tbody {
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 100px;
+        } 
+        thead, tbody { 
+            display: block;  /* Need to fix format of table data */
+        }
+        
+        
+        tbody td, thead th {
+            width: 5%;  19% is less than (100% / 5 cols) = 20%
+            float: left;
+        }
+        h4 {
+            
+        }
+        #selectQuantity {      /* Need to align horizantally*/
+            float: left;
+        }
+        
     </style>
     
 </head>
 
 <body>
     
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">Profile</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
     <!-- Recent submissions-->
     <div class="section" id="sectionOne">
-        <div class="card-panel">
+        <div class="card-panel" id="addNew">  <!--Added id for margin-->
             <h4>Recent Submissions</h4>
-            <table class="responsive-table">
+            <table class="responsive-table">  
                 <thead>
                     <tr>
-                        <th>Donation from</th>
-                        <th>Frozen</th>
+                        <th>Status</th>  <!--Changed order -->
+                        <th>Date</th>
                         <th>Fresh</th>
+                        <th>Frozen</th>
                         <th>Packaged</th>
+                        <th>Canned</th>
+                        <th>Description</th> 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Ralphs</td>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>4</td>
-                    </tr>
+                
+                <tbody id="submitNewList">         <!--Push new items to id-->
                     
-                    <tr>
-                        <td>Safeway</td>
-                        <td>9</td>
-                        <td>2</td>
-                        <td>5</td>
-                    </tr>
                     
-                    <tr>
-                        <td>Vons</td>
-                        <td>4</td>
-                        <td>7</td>
-                        <td>7</td>
-                    </tr>
-                    <!--span class??? -->
                 </tbody>
+                
             </table>
         </div>
     </div>
@@ -75,78 +134,62 @@
     <div class="section" id="sectionOne">
         <div class="card-panel">
             <h4>Add New</h4>
-            <ul class="list-group">
-                <li class="list-group-item new-item">
-                    <div id="list-form">
-                        
-                        
-                        <div class="row">
-                            <p>
-                                <input name="foodtype" class="with-gap" type="radio" id="foodtype1" />
-                                <label for="foodtype1">Fresh</label>
-                            </p>
-                            <p>
-                                <input name="foodtype" class="with-gap" type="radio" id="foodtype2" />
-                                <label for="foodtype2">Packaged</label>
-                            </p>
-                            <p>
-                                <input name="foodtype" class="with-gap" type="radio" id="foodtype3" />
-                                <label for="foodtype3">Frozen</label>
-                            </p>
-                        </div>
-                        <div class="col s4">
-                            <input id="number" placeholder="" type="number">
-                            <button type="submitItem" onclick="submitFood();" class="btn btn-default">Quantity</button>
+            <h6>Please enter a whole number (or 0 if none)</h6>  <!--Removed placeholder-->
+            <div class="row">
+                <form class="col s12" id="addFoodForm">
+                    <div class="row col s3" id="selectQuantity">
+                        <h5>Fresh</h5>
+                        <div class="input-field">
+                            <input id="fresh" placeholder="--" type="number">
                         </div>
                     </div>
-                </div>
-            </li>
-            <span class="newitem-container">
-                    <div class="card-panel" id="newitemCon">
+                    <div class="row col s3">
+                        <h5>Frozen</h5>
+                        <div class="input-field">
+                            <input id="frozen" placeholder="--" type="number">
+                        </div>
                     </div>
-            </span>
-        </ul>
+                    
+                    <div class="row col s3"> 
+                        <h5>Packaged</h5>
+                        <div class="input-field">
+                            <input id="packaged" placeholder="--" type="number">
+                        </div>
+                    </div>
+                    <div class="row col s3">
+                        <h5>Canned</h5>
+                        <div class="input-field">
+                            <input id="canned" placeholder="--" type="number">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row col s12">
+                        <h5>Description</h5>
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="description" class="materialize-textarea" placeholder="e.g. bananas, tomatoes, beef, etc."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" align="center">
+                        <button type="submit" class="btn btn-default"  id="add">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+
+
+<footer>
+    <!-- ?? -->
+</footer>
 
 <!-- Submit new-->
 <!-- after clicking add, this should take it to the adding html page-->
-<script type="text/javascript">
 
-function insertNewItem(event) {
-    event.preventDefault();
-    var todo = {
-      text: $submitItem.val().trim(),
-      complete: false
-    };
- 
-    $.post("/api/todos", todo, getTodos);
-    $newItemInput.val("");
-  }
-
-
-
-//patrick code
-// var submitFood;
-// $(document).ready(function(){
-
-//     submitFood = function () {
-//         var footThingy = {
-//             fresh: document.getElementById('foodtype1').checked,
-//             packaged: $('#foodtype2').val()
-//         }
-//         console.log(footThingy);
-//         // $.post('/myPostUrl', foodThingy, function (resp) {
-//         //     console.log(resp);
-//         // })
-//     }    
-    
-
-// })
-
-</script>
 <script type="text/javascript" src="js/food.js"></script>
-
 
 </body>
 

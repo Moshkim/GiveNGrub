@@ -1,22 +1,62 @@
-<!DOCTYPE html>
+
+
+<!DOCTYPE>
 
 <html>
-<title>SignIn</title>
+<title>Signin</title>
 
 <head>
     
-    <title>SignIn</title>
+    <title>The Materialize Example</title>
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
     <link rel = "stylesheet"
     href = "https://fonts.googleapis.com/icon?family = Material+Icons">
     <link rel = "stylesheet"
     href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-      
+    <!--<link rel="stylesheet" href="signIn.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>    
     
     <style>
+        
         #signin {
-            margin: 15% auto auto auto;
-            max-width: 40%;
+            margin: 36% auto auto 1%;
+            max-width: 35%;
+            background-color: rgb(255, 255, 255, 0);
+            opacity:  0.6;   
+        }
+        #signin:hover {
+            display: block;
+            opacity: 0.9;
+        }
+        .containerTitle {
+            font-family: 'Indie Flower';
+            font-size: 200%;
+            text-align: left;
+            margin: 0% 0 -37% 0;
+        }
+        body {
+            width: 100%;
+            background-image: url('https://diversity.unc.edu/files/2017/07/give_-donate_-charity-518141776_1258x838_720cropped.png');
+            background-size: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .containerOne {
+            font-family: 'Indie Flower';
+        }
+        p1 {
+            font-size: 175%;
+        }
+        p {
+            font-family: 'Indie Flower';
+            font-size: 500%;
+            /* margin: -15% 0 0 0; */
         }
     </style>
     
@@ -24,34 +64,48 @@
 
 
 
-<body class = "section" id="signin">   
-    <div class="card-panel">
-        <div class = "row">
-            <form class = "col s12">
-                <div class = "row">
-                    <div class = "input-field col s12">
-                        <input placeholder = "Email" value = "" id = "email"
-                        type = "text" class = "active validate" required />
-                        <label for = "email">Email</label>
+<body>
+
+    <div class="container">
+        <div class="containerTitle">
+            <p>GiveNGrub</p>
+        </div>
+       <!--Sign in --> 
+        <div class="card-panel" id="signin">
+            <div class = "row">
+                <form class = "col s12">
+                    <div class = "row">
+                        
+                        <div class = "input-field col s12">
+                            <input placeholder = "Email" value = "" id = "email"
+                            type = "text" class = "active validate" required />
+                            <label for = "email">Email</label>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class = "input-field col s12">      
+                            <label for = "password">Password</label>
+                            <input id = "password" type = "password" placeholder = "Password"
+                            class = "validate" required />          
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="row" align="center">
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                    <i class="material-icons right"></i>
+                </button>
                 <div class="row">
-                    <div class = "input-field col s12">      
-                        <label for = "password">Password</label>
-                        <input id = "password" type = "password" placeholder = "Password"
-                        class = "validate" required />          
-                    </div>
+                    <br>
+                    <a href="signup.html">New user? Register Now</a>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" id="submit">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
-     
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+    
     <script type="text/javascript" src="js/signin.js"></script>  
+    
 </body>
 
-
 </html>
-            

@@ -25,11 +25,11 @@ module.exports = function(app){
         })
     })
 
-    app.post('/api/fp/food', function(req, res){
+    app.post('/api/fp/food/:id', function(req, res){
 
         //We need to find out how we are passing data from html to here!
         //It is either through the url or actual data object!!!!!!!!
-        let id = req.body.id
+        //let id = req.query.id
         
 
         let frozen = req.body.frozen
@@ -43,6 +43,7 @@ module.exports = function(app){
         let remaining = req.body.remaining
         let takenBy = null
         let OrganizationId = req.params.id
+        
 
         database.Food.create({
             frozen: frozen,
