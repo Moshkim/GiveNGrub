@@ -2,7 +2,6 @@ module.exports = function(sequelize, DataType){
     const Organization = sequelize.define('Organization', {
         id:{
             type: DataType.INTEGER,
-            unique: true,
             autoIncrement: true,
             primaryKey: true
         },
@@ -10,7 +9,6 @@ module.exports = function(sequelize, DataType){
             type: DataType.STRING,
             allowNull: false,
             validate: {
-                isUnique: true,
                 len: [1, 50]
             }
         },
@@ -18,75 +16,52 @@ module.exports = function(sequelize, DataType){
             type:DataType.STRING,
             allowNull: false,
             validate:{
-                isUnique: true,
                 isEmail: true,
-                len: [2, 50]
+                len: [1, 50]
             }
         },
         password: {
             type:DataType.STRING,
             allowNull: false,
             validate: {
-                len: [6, 50]
+                len: [1, 50]
             }
         },
         company_name: {
             type: DataType.STRING,
             allowNull: false,
             validate: {
-                len:[5, 50]
+                len:[1, 50]
             }
+        },
+        contact: {
+            type: DataType.STRING,
+            allowNull: true
         },
         address: {
             type: DataType.STRING,
             allowNull: false,
             validate: {
-                len: [5, 100]
+                len: [1, 100]
             }
         },
-        /*
-        city: {
+        place_id: {
             type: DataType.STRING,
-            allowNull: true,
-            validate: {
-                len: [5, 50]
-            }
-        },
-        state: {
-            type: DataType.STRING,
-            allowNull: true,
-            validate: {
-                len: [1, 50]
-            }
-        },
-        zipcode: {
-            type: DataType.INTEGER,
             allowNull: false,
             validate: {
-                len: [5, 15]
+                len: [1, 100]
             }
-        },*/
+        },
         latitude: {
             type: DataType.DECIMAL(12, 9),
             allowNull: true,
-            defaultValue: null,
-            validate: {
-                min: -90,
-                max: 90
-            }
-
+            defaultValue: null
         },
         longitude: {
             type: DataType.DECIMAL(12, 9),
             allowNull: true,
-            defaultValue: null,
-            validate: {
-                min: -90,
-                max: 90
-            }
-
+            defaultValue: null
         },
-
         entity: {
             type: DataType.STRING,
             allowNull: false
