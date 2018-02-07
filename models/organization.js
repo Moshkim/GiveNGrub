@@ -41,9 +41,10 @@ module.exports = function(sequelize, DataType){
             type: DataType.STRING,
             allowNull: false,
             validate: {
-                len: [5, 50]
+                len: [5, 100]
             }
         },
+        /*
         city: {
             type: DataType.STRING,
             allowNull: true,
@@ -64,7 +65,28 @@ module.exports = function(sequelize, DataType){
             validate: {
                 len: [5, 15]
             }
+        },*/
+        latitude: {
+            type: DataType.DECIMAL(12, 9),
+            allowNull: true,
+            defaultValue: null,
+            validate: {
+                min: -90,
+                max: 90
+            }
+
         },
+        longitude: {
+            type: DataType.DECIMAL(12, 9),
+            allowNull: true,
+            defaultValue: null,
+            validate: {
+                min: -90,
+                max: 90
+            }
+
+        },
+
         entity: {
             type: DataType.STRING,
             allowNull: false
