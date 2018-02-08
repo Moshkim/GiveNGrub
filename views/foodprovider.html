@@ -23,16 +23,18 @@
         #sectionOne {
             margin: 0 auto 0 auto;
             max-width: 70%;
+            
         }
         p {
             float: left;
             margin: 0 3%;
         }
+        /*
         #scrollData{
             width: 700x;
             height: 100px;
             overflow: scroll;
-        }
+        }*/
         
         ul {
             list-style-type: none;
@@ -64,14 +66,7 @@
         nav {
             position: fixed;
         }
-        #addNew {
-            margin: 70px auto auto auto;
-        }
-        tbody {
-            overflow-y: auto;
-            overflow-x: hidden;
-            max-height: 100px;
-        } 
+       
         thead, tbody { 
             display: block;  /* Need to fix format of table data */
         }
@@ -106,7 +101,7 @@
     <div class="section" id="sectionOne">
         <div class="card-panel" id="addNew">  <!--Added id for margin-->
             <h4>Recent Submissions</h4>
-            <table class="responsive-table">  
+            <table class="centered">  
                 <thead>
                     <tr>
                         <th>Status</th>  <!--Changed order -->
@@ -189,7 +184,7 @@
 <!-- Submit new-->
 <!-- after clicking add, this should take it to the adding html page-->
 
-<script type="text/javascript" src="js/food.js"></script>
+<script type="text/javascript" src="js/foodprovider.js"></script>
 
 </body>
 

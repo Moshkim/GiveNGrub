@@ -42,6 +42,8 @@ module.exports = function(app){
         let status = req.body.status
         let remaining = req.body.remaining
         let takenBy = null
+        let state = req.body.state
+        let city = req.body.city
         let OrganizationId = req.params.id
         
 
@@ -54,6 +56,8 @@ module.exports = function(app){
             status: status,
             remaining: remaining,
             takenBy: takenBy,
+            state: state,
+            city: city,
             OrganizationId: OrganizationId
         }).then(function(createdFoodList){
 

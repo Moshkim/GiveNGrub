@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'views')))
 require('./controllers/routes/food-api-routes')(app)
 require('./controllers/routes/html-api-routes.js')(app)
 require('./controllers/routes/organization-api-routes.js')(app)
+require('./controllers/routes/nonprofit-api-routes.js')(app)
 
 database.sequelize.sync({force: false}).then(function(){
     app.listen(PORT, function() {

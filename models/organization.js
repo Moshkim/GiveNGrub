@@ -45,6 +45,20 @@ module.exports = function(sequelize, DataType){
                 len: [1, 100]
             }
         },
+        state: {
+            type: DataType.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 20]
+            }
+        },
+        city: {
+            type: DataType.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 50]
+            }
+        },
         place_id: {
             type: DataType.STRING,
             allowNull: false,
@@ -72,6 +86,14 @@ module.exports = function(sequelize, DataType){
             defaultValue: null,
             validate: {
                 max: 300
+            }
+        },
+        rating: {
+            type: DataType.INTEGER,
+            allowNull: true,
+            defaultValue: 0,
+            validate: {
+                max: 100000
             }
         }
     }, {

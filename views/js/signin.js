@@ -37,11 +37,16 @@ $(document).ready(function(){
         $.get('/api/id', user, function(data, status){
         
             if(data){
+
                 let identityObject = {
                     id: data.id,
-                    entity: data.entity
-
+                    city: data.city,
+                    state: data.state,
+                    place_id: data.place_id,
+                    entity: data.entity,
+                    rating: data.rating
                 }
+                
                 let myJSONObject = JSON.stringify(identityObject)
                 localStorage.setItem('identity', myJSONObject)
 
