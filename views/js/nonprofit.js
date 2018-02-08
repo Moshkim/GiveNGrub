@@ -8,6 +8,7 @@ $(document).ready(function(){
 
         console.log(identityObject.state)
         console.log(identityObject.city)
+
         let filter = {
             state: identityObject.state,
             city: identityObject.city
@@ -16,9 +17,20 @@ $(document).ready(function(){
         $.get('/api/np/foodlist', filter, function(data, status){
 
             if(data){
-                console.log('\n\n')
                 console.log(data)
-                console.log('\n\n')
+
+                for(let i = 0; i < data.length; i++){
+                    $('#data').append($('<li>')
+                    .append($('<div>')
+                        .addClass("collapsible-header")
+                        .text(data[i].Organization.company_name))
+                        .append($('<div>')
+                            .addClass("collapsible-body")
+                            .append($('<p>')
+                                .text(`Donor Ratings: ${data[i].Organization.rating}`))
+                            .append($('<p>')
+                                .text(`Food Donated : \n Frozen: ${data[i].frozen}, Fresh: ${data[i].fresh}, Canned: ${data[i].canned}, Packaged: ${data[i].packaged}`))))
+                }
             }
         })
 
