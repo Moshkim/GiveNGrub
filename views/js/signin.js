@@ -16,23 +16,7 @@ $(document).ready(function(){
         getOrganization(user)
 
     }
-    /*
 
-    var detailObject = {
-        userKey: userKey,
-        whichBlog: whichBlogRep
-    }
-
-    var myJSONObject = JSON.stringify(detailObject)
-    localStorage.setItem('blog', myJSONObject)
-    console.log(myJSONObject)
-
-    document.location.href = "detail.html"
-
-
-    var specificBlogObj = localStorage.getItem('blog')
-    specificBlogObj = JSON.parse(specificBlogObj)
-*/
     function getOrganization(user){
         $.get('/api/id', user, function(data, status){
         
@@ -46,7 +30,7 @@ $(document).ready(function(){
                     entity: data.entity,
                     rating: data.rating
                 }
-                
+
                 let myJSONObject = JSON.stringify(identityObject)
                 localStorage.setItem('identity', myJSONObject)
 

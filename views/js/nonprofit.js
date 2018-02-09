@@ -78,9 +78,7 @@ $(document).ready(function(){
         
         
     })
-    /*
     
-    */
 
     function grabOrganizationInfo() {
         let identityObject = localStorage.getItem('identity')
