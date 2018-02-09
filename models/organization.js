@@ -67,12 +67,12 @@ module.exports = function(sequelize, DataType){
             }
         },
         latitude: {
-            type: DataType.DECIMAL(12, 9),
+            type: DataType.DECIMAL(12, 7),
             allowNull: true,
             defaultValue: null
         },
         longitude: {
-            type: DataType.DECIMAL(12, 9),
+            type: DataType.DECIMAL(12, 7),
             allowNull: true,
             defaultValue: null
         },

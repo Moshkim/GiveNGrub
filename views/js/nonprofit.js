@@ -240,8 +240,12 @@ function initMap() {
 
                         console.log(data[i].Organization.latitude)
                         console.log(data[i].Organization.longitude)
+                        let lat = data[i].Organization.latitude
+                        let lng = data[i].Organization.longitude
 
-                        let markerLocation = new google.maps.LatLng(data[i].Organization.latitude, data[i].Organization.longitude)
+                        let markerLocation = new google.maps.LatLng(lat, lng)
+                        console.log(markerLocation)
+                        
                         //addMarker(markerLocation)
 
                         

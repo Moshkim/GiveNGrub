@@ -20,7 +20,7 @@ require('./controllers/routes/html-api-routes.js')(app)
 require('./controllers/routes/organization-api-routes.js')(app)
 require('./controllers/routes/nonprofit-api-routes.js')(app)
 
-database.sequelize.sync({force: false}).then(function(){
+database.sequelize.sync({force: true}).then(function(){
     app.listen(PORT, function() {
         console.log(`App is listening on PORT: ${PORT}`)
     })
