@@ -24,6 +24,7 @@ $(document).ready(function(){
 
                 let identityObject = {
                     id: data.id,
+                    address: data.address,
                     city: data.city,
                     state: data.state,
                     place_id: data.place_id,

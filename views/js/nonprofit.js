@@ -1,7 +1,37 @@
 
 
-var map;
+var map
+var foodProviderLocations = []
+
+
 function initMap() {
+    
+    
+    
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log("not getting location")
+        }
+    }
+    
+    
+    function showPosition(position) {
+        let currentLat = position.coords.latitude
+        let currentLng = position.coords.longitude
+        console.log(currentLat + " " + currentLng)
+        
+        var curLocMap = new google.maps.LatLng(currentLat,currentLng)
+        
+        newMap.setCenter(curLocMap)
+        newMap.setZoom(12)
+        
+    }
+
+    getLocation()
+    
+    
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 33.6694649, lng: -117.8231107 },
         zoom: 12,
@@ -89,11 +119,12 @@ function initMap() {
 }
 
 
+google.maps.event.addListener(map, "click", function(event){
+
+    console.log('clicked clicked')
+})
 
 $(document).ready(function(){
-    
-    
-    
     
     
     $(document).on('click', '.submitForGrab', function(event){
@@ -206,9 +237,16 @@ $(document).ready(function(){
         $.get('/api/np/foodlist', filter, function(data, status){
             
             if(data){
-                //console.log(data)
-                
+
                 for(let i = 0; i < data.length; i++){
+                    var marker = new google.maps.Marker({
+                        position: {lat: data[i].Organization.latitude, lng: data[i].Organization.longitude},
+                        map: map,
+                        label: `${data[i].Organization.company_name}`
+                    })
+
+                    
+
                     $('#data').append($('<li>')
                     .append($('<div>')
                     .addClass("collapsible-header")

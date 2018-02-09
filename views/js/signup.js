@@ -93,6 +93,7 @@ $(document).ready(function(){
 
                 let identityObject = {
                     id: id,
+                    address: result.address,
                     city: result.city,
                     state: result.state,
                     place_id: result.place_id,
