@@ -121,7 +121,7 @@ function initMap() {
 
         console.log('clicked clicked')
     })
-    
+
     $(document).ready(function(){
     
     
@@ -240,10 +240,10 @@ function initMap() {
                         var marker = new google.maps.Marker({
                             position: {lat: data[i].Organization.latitude, lng: data[i].Organization.longitude},
                             map: map,
-                            label: `${data[i].Organization.company_name}`
+                            title: `${data[i].Organization.company_name}`
                         })
     
-                        
+                        map.set(marker)
     
                         $('#data').append($('<li>')
                         .append($('<div>')
