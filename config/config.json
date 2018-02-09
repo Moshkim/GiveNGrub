@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
+    "username": "vlg0nzvqe7o29zqj",
+    "password": "ocl7cge4xr3nk9ce",
     "database": "GiveNGrub",
-    "host": "127.0.0.1",
+    "host": "127.0.otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com0.1",
     "dialect": "mysql",
-    "port": 8889
+    "port": 3306
   },
   "test": {
     "username": "root",
@@ -15,10 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable":true,
+    "host": "mysql://vlg0nzvqe7o29zqj:ocl7cge4xr3nk9ce@otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jj5g6k05kgmcl4jt"
   }
 }
