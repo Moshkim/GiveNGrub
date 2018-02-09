@@ -238,6 +238,9 @@ function initMap() {
     
                     for(let i = 0; i < data.length; i++){
 
+                        console.log(data[i].Organization.latitude)
+                        console.log(data[i].Organization.longitude)
+
                         let markerLocation = new google.maps.LatLng(data[i].Organization.latitude, data[i].Organization.longitude)
                         addMarker(markerLocation)
 
