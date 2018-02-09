@@ -18,7 +18,8 @@ module.exports = function(app){
     app.get('/api/np/update/foodlist/:id', function(req, res){
         database.Food.update(
             {
-                takenBy: req.body.myId
+                takenBy: req.query.id,
+                status: true
             },
             {
                 where: {
