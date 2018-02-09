@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
 
-
-
     $(document).on('click', '.checkboxes', function(event){
         console.log('\n\n')
 
