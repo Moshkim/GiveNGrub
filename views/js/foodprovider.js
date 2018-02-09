@@ -95,11 +95,11 @@ $(document).ready(function(){
                     let formattedDate
 
                     if(data[i].status === false){
-                        status = "Give"
+                        status = "Available"
                     } else {
                         status = "Grabbed"
                     }
-                    formattedDate = moment(data[i].createdAt).format('MM/DD/YYYY')
+                    formattedDate = moment(data[i].createdAt).format('MM/DD/YY')
                     
                     $("#submitNewList").append($("<tr>")
                     .append($("<td>").text(status))
