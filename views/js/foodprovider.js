@@ -103,7 +103,7 @@ $(document).ready(function(){
                     
                     $("#submitNewList").append($("<tr>")
                     .append($("<td>").text(status))
-                    .append($("<td>").text(data[i].createdAt))
+                    .append($("<td>").text(formattedDate))
                     .append($("<td>").text(data[i].fresh))
                     .append($("<td>").text(data[i].frozen))
                     .append($("<td>").text(data[i].packaged))
