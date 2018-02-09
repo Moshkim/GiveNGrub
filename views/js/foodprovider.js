@@ -1,3 +1,6 @@
+
+var moment = require('moment')
+
 $(document).ready(function(){
     
     
@@ -91,12 +94,14 @@ $(document).ready(function(){
                 //console.log(data)
                 for(let i = 0; i < data.length; i++){
                     let status
-                    
+                    let formattedDate
+
                     if(data[i].status === false){
                         status = "Give"
                     } else {
                         status = "Grabbed"
                     }
+                    formattedDate = moment(date[i].createdAt).format('MM/DD/YYYY')
                     
                     $("#submitNewList").append($("<tr>")
                     .append($("<td>").text(status))
