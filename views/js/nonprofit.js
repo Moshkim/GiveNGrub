@@ -24,6 +24,13 @@ function initMap() {
         
         var curLocMap = new google.maps.LatLng(currentLat,currentLng)
         
+        var marker = new google.maps.Marker({
+            position: curLocMap,
+            map: map,
+            label: {text: "Home", color: "white"},
+            icon:"../images/home.png"
+        })
+
         map.setCenter(curLocMap)
         map.setZoom(12)
         
@@ -250,7 +257,7 @@ function initMap() {
                         var marker = new google.maps.Marker({
                             position: markerLocation,
                             map: map,
-                            label: `${data[i].Organization.company_name}`,
+                            label: {text: `${data[i].Organization.company_name}`, color: "white"},
                             icon:"../images/food.png"
                         })
                         
