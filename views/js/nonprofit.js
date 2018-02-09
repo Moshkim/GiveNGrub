@@ -247,11 +247,13 @@ function initMap() {
                         //console.log(markerLocation)
                         
 
-                        new google.maps.Marker({
+                        var marker = new google.maps.Marker({
                             position: markerLocation,
-                            map: map
+                            map: map,
+                            label: `${data[i].Organization.company_name}`,
+                            icon:"../images/food.png"
                         })
-                        //addMarker(markerLocation)
+                        
 
                         
     
