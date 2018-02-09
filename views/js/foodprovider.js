@@ -99,7 +99,7 @@ $(document).ready(function(){
                     } else {
                         status = "Grabbed"
                     }
-                    formattedDate = moment(date[i].createdAt).format('MM/DD/YYYY')
+                    formattedDate = moment(data[i].createdAt).format('MM/DD/YYYY')
                     
                     $("#submitNewList").append($("<tr>")
                     .append($("<td>").text(status))
