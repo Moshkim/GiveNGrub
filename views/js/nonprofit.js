@@ -243,7 +243,6 @@ function initMap() {
                             title: `${data[i].Organization.company_name}`
                         })
     
-                        map.set(marker)
     
                         $('#data').append($('<li>')
                         .append($('<div>')
