@@ -242,7 +242,7 @@ function initMap() {
                         console.log(data[i].Organization.longitude)
 
                         let markerLocation = new google.maps.LatLng(data[i].Organization.latitude, data[i].Organization.longitude)
-                        addMarker(markerLocation)
+                        //addMarker(markerLocation)
 
                         
     
