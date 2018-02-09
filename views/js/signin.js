@@ -40,6 +40,8 @@ $(document).ready(function(){
                 } else if (data.entity === "NP"){
                     window.location.href = "../nonprofit.html"
                 }
+            } else {
+                Materialize.toast("Either your email or password is not valid! Try again", 3000)
             }
         })
     }
