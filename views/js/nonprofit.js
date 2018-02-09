@@ -237,11 +237,11 @@ function initMap() {
                 if(data){
     
                     for(let i = 0; i < data.length; i++){
-                        var marker = new google.maps.Marker({
-                            position: {lat: data[i].Organization.latitude, lng: data[i].Organization.longitude},
-                            map: map,
-                            title: `${data[i].Organization.company_name}`
-                        })
+
+                        let markerLocation = new google.maps.LatLng(data[i].Organization.latitude, data[i].Organization.longitude)
+                        addMarker(markerLocation)
+
+                        
     
     
                         $('#data').append($('<li>')
@@ -278,6 +278,14 @@ function initMap() {
             
         }
         
+
+        function addMarker(position) {
+            new google.maps.Marker({
+                position: postion,
+                map: map
+            })
+        }
+
         grabOrganizationInfo()
         getFoodListNearYou()
         
