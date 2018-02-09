@@ -1,6 +1,4 @@
 
-var moment = require('moment')
-
 $(document).ready(function(){
     
     
