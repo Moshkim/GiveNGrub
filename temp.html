@@ -188,3 +188,109 @@ This is Food Provider!!!!
 </body>
 
 </html>
+
+
+
+This is non profit page!!!!
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Avail for pickup | GiveNGrub</title>
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        
+        .containerTitle {
+            /*font-family: 'Indie Flower';*/
+            text-align: center;
+            margin: 5% auto 0 auto;
+        }
+        
+        #map {
+            margin: 0 auto 0 auto;
+            height: 400px;
+            max-width: 70%;
+        }
+        #resize {
+            float: center;
+            max-width: 70%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        /* html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        } */
+        #results {
+            margin: auto;
+            max-width: 100%;
+        }
+        body {
+            background-color: rgb(238, 235, 235);
+            text-shadow: 2px 2px 5px rgb(233, 226, 226);
+            /*font-family: 'Indie Flower';*/
+        }
+        /*
+        .map {
+            border-radius: 25px;
+        }*/
+        #data {
+            max-width: 76%;  
+        }
+        ul li {
+            background-color: white;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    
+    <div>
+        <h1 id="name" class="containerTitle"></h1>
+    </div>
+    
+    <div class="containerTitle">
+        <h3>Locations for Pick-Up</h2>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col s7">
+                <div class="map" id="map">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col s5">
+                    <ul class = "collapsible popout" data-collapsible = "accordion" id="data"></ul>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="container" id="resize">
+            <div class="col s7" id="grabLists"></div>
+        </div>
+        
+        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBDIgfM9PCnLI_koxi20OA2EqB_8yKiu4&callback=initMap"></script>
+        <script type="text/javascript" src="js/nonprofit.js"></script> 
+        
+    </body>
+    
+    </html>
